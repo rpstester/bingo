@@ -19,5 +19,12 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // flag unused variables, but allow args starting with _
+      'no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
+      // disallow unnecessary return await and require that async functions use await
+      'no-return-await': 'error',
+      'require-await': 'error'
+    },
   },
 ])
